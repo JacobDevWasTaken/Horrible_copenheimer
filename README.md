@@ -1,2 +1,2 @@
-# Horrible_copenheimer
+# Horrible copenheimer
 A minecraft server seeker, but horribly bad
