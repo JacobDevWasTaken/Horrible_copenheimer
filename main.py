@@ -4,7 +4,7 @@ import time
 import json
 
 
-VERSION = "v1.1.0"
+VERSION = "v1.2.0"
 
 
 with open("config.json", "r") as file:
