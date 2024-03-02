@@ -17,11 +17,18 @@ BAD_IPS = []
 with open("exclude.txt", "r") as file:
     for line in file:
         line = line.rstrip("\n")
+        line = line.split(" ")[0]
+        line
         if len(line) == 0:
             continue
         if line[0] == "#":
             continue
-        BAD_IPS.append(ipaddress.IPv4Network(line))
+        if "-" in line:
+            start_ip, end_ip = line.split('-')
+            start_ip, end_ip = ipaddress.IPv4Address(start_ip.strip()), ipaddress.IPv4Address(end_ip.strip())
+            BAD_IPS.extend(list(ipaddress.summarize_address_range(start_ip, end_ip)))
+        else:
+            BAD_IPS.append(ipaddress.IPv4Network(line))
 
 
 
