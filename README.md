@@ -11,6 +11,7 @@ Or you can download the ZIP, click "Code" -> "Download ZIP", then just unzip the
 ## Usage
 Go into the Horrible_copenheimer folder/directory and run `main.py`.
 
+Tip: Increase the number of workers to make it faster.
 ## Configuration
 You can configure it in the `config.json` file.
 Available settings:
