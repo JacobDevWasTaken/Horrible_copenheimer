@@ -1,5 +1,5 @@
 # Horrible copenheimer
-A minecraft server seeker, but horribly bad
+A minecraft server seeker, but horribly bad.
 
 ## Installation
 To install, simply clone the repo using git:
