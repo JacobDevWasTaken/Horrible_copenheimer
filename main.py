@@ -4,18 +4,15 @@ import time
 import json
 
 
-VERSION = "v1.0.0"
+VERSION = "v1.1.0"
 
 
-with open("config.json") as file:
+with open("config.json", "r") as file:
     global CONFIG
     CONFIG = json.load(file)
 
 WORKERS = CONFIG["WORKERS"]
 PORTS = CONFIG["PORTS"]
-TIMEOUT = CONFIG["TIMEOUT"]
-
-worker.config(PORTS, TIMEOUT)
 
 
 
