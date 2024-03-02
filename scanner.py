@@ -12,6 +12,17 @@ PORTS = CONFIG["PORTS"]
 DEBUG = CONFIG["DEBUG"]
 
 
+# Ips that you should proably not scan if you don't want legal trouble
+BAD_IPS = []
+with open("exclude.txt", "r") as file:
+    for line in file:
+        line = line.rstrip("\n")
+        if len(line) == 0:
+            continue
+        if line[0] == "#":
+            continue
+        BAD_IPS.append(ipaddress.IPv4Network(line))
+
 
 
 def scan_port(ip: str, port: int) -> bool:
@@ -35,6 +46,7 @@ def scan_ip(ip: str) -> list[tuple[str, int]]:
             open_ports.append((ip, port, res))
     return open_ports
 
+
 def is_mcserver(ip, port, sock):
     sp = statusping.StatusPing(ip, port)
     try:
@@ -45,30 +57,11 @@ def is_mcserver(ip, port, sock):
 
 
 
-def is_bogon_ip(ip):
-    bogon_ranges = [
-        ipaddress.IPv4Network('0.0.0.0/8'),
-        ipaddress.IPv4Network('10.0.0.0/8'),
-        ipaddress.IPv4Network('100.64.0.0/10'),
-        ipaddress.IPv4Network('127.0.0.0/8'),
-        ipaddress.IPv4Network('127.0.53.53'),
-        ipaddress.IPv4Network('169.254.0.0/16'),
-        ipaddress.IPv4Network('172.16.0.0/12'),
-        ipaddress.IPv4Network('192.0.0.0/24'),
-        ipaddress.IPv4Network('192.0.2.0/24'),
-        ipaddress.IPv4Network('192.168.0.0/16'),
-        ipaddress.IPv4Network('198.18.0.0/15'),
-        ipaddress.IPv4Network('198.51.100.0/24'),
-        ipaddress.IPv4Network('203.0.113.0/24'),
-        ipaddress.IPv4Network('224.0.0.0/4'),
-        ipaddress.IPv4Network('240.0.0.0/4'),
-        ipaddress.IPv4Network('255.255.255.255'),
-    ]
-
+def is_bad_ip(ip):
     try:
         ip_obj = ipaddress.ip_address(ip)
-        for bogon_range in bogon_ranges:
-            if ip_obj in bogon_range:
+        for range in BAD_IPS:
+            if ip_obj in range:
                 return True
             else:
                 return False
