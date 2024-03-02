@@ -32,7 +32,7 @@ with open("exclude.txt", "r") as file:
 
 
 
-def scan_port(ip: str, port: int) -> bool:
+def scan_port(ip: str, port: int):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.settimeout(TIMEOUT)
     result = sock.connect_ex((ip, port))
@@ -45,7 +45,7 @@ def scan_port(ip: str, port: int) -> bool:
             
 
 
-def scan_ip(ip: str) -> list[tuple[str, int]]:
+def scan_ip(ip: str):
     open_ports = []
     for port in PORTS:
         res = scan_port(ip=ip, port=port)
