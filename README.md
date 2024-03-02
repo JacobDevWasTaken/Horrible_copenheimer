@@ -2,14 +2,16 @@
 A minecraft server seeker, but horribly bad.
 
 ## Installation
-1. Install python
+1. *Install python*
+
    Install python (if you haven't already) from [python.org](https://python.org).
 
    Simply donwload the installer for the latest version of python *3*
    
    *IMPORTANT: USE PYTHON 3 AND NOT PYTHON 2*
    
-2. Download the files
+3. *Download the files*
+
   To download, simply clone the repo using git, with this command:
 
   `git clone https://github.com/JacobborstellCoder/Horrible_copenheimer.git`
