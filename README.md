@@ -18,7 +18,7 @@ To download, simply clone the repo using git, with this command:
 
 Note: you need to have git installed for this to work. If you don't have git installed, install git or download the ZIP.
   
-To download the ZIP click "Code (The green button on the to left)" -> "Download ZIP", then just unzip the ZIP file.
+To download the ZIP click "Code (The green button on the top left)" -> "Download ZIP", then just unzip the ZIP file.
 
 ## Usage
 Go into the Horrible_copenheimer folder/directory and run `main.py`.
