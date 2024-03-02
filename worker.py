@@ -43,12 +43,12 @@ def run_worker():
         if results:
             for result in results:
                 ip, port, sock = result[0], result[1], result[2]
-                print("[INFO] " + YELLOW + "Found ip: " + ip + ":" + str(port) + ", checking for minecraft servers..." + END)
+                print("[INFO] " + YELLOW + "Found ip with port open: " + ip + ":" + str(port) + ", checking for minecraft servers..." + END)
                 res = scanner.is_mcserver(ip, port, sock)
                 if res:
-                    print("[INFO] " + GREEN + "[SERVER] Found server: " + ip + ":" + str(port) + END)
+                    print("[INFO] " + GREEN + "[SERVER] Found minecraft server: " + ip + ":" + str(port) + END)
                     log_server(ip=ip, port=port)
                 else:
-                    print("[INFO] " + YELLOW + "Did not find any server on: " + ip + ":" + str(port) + END)
+                    print("[INFO] " + YELLOW + "Did not find any minecraft server on: " + ip + ":" + str(port) + END)
         if not running:
             break
