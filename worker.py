@@ -1,12 +1,6 @@
 import random
-import socket
 import scanner
 import time
-
-PORTS_TO_SCAN = []
-TIMEOUT = 1
-
-running = True
 
 
 GREEN = "\033[1;32;48m"
@@ -15,10 +9,8 @@ RED = "\033[1;31;48m"
 END = "\033[1;37;0m"
 
 
-def config(ports, timeout):
-    global PORTS_TO_SCAN, TIMEOUT
-    PORTS_TO_SCAN = ports
-    TIMEOUT = timeout
+running = True
+
 
 
 def stop_threads():
@@ -44,19 +36,19 @@ def run_worker():
     time.sleep(1)
 
     while True:
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.settimeout(TIMEOUT)
         scan_ip = random_ip()
-        results = scanner.scan_ip(sock=sock, ip=scan_ip, ports=PORTS_TO_SCAN)
+        if scanner.is_bogon_ip(scan_ip):
+            continue
+        results = scanner.scan_ip(scan_ip)
         if results:
             for result in results:
-                ip, port = result[0], result[1]
+                ip, port, sock = result[0], result[1], result[2]
                 print("[INFO] " + YELLOW + "Found ip: " + ip + ":" + str(port) + ", checking for minecraft servers..." + END)
-                if scanner.is_mcserver(ip + ":" + str(port)):
+                res = scanner.is_mcserver(ip, port, sock)
+                if res:
                     print("[INFO] " + GREEN + "[SERVER] Found server: " + ip + ":" + str(port) + END)
                     log_server(ip=ip, port=port)
                 else:
                     print("[INFO] " + YELLOW + "Did not find any server on: " + ip + ":" + str(port) + END)
-        sock.close()
         if not running:
             break
