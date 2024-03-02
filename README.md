@@ -2,8 +2,10 @@
 A minecraft server seeker, but horribly bad
 
 ## Installation
-To install, simply clone the repo using git.
+To install, simply clone the repo using git:
+
 `git clone https://github.com/JacobborstellCoder/Horrible_copenheimer.git`
+
 Or you can download the ZIP, click "Code" -> "Download ZIP", then just unzip the ZIP file.
 
 ## Usage
