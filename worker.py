@@ -37,7 +37,7 @@ def run_worker():
 
     while True:
         scan_ip = random_ip()
-        if scanner.is_bogon_ip(scan_ip):
+        if scanner.is_bad_ip(scan_ip):
             continue
         results = scanner.scan_ip(scan_ip)
         if results:
