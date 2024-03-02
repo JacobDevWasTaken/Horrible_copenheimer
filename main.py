@@ -20,7 +20,7 @@ print("[INFO] Starting Copenheimer " + VERSION + " with " + str(WORKERS) + " wor
 print("[INFO] Starting workers...")
 
 
-workers_list: list[Thread] = []
+workers_list = []
 
 for i in range(WORKERS):
     new_worker = Thread(target=worker.run_worker)
