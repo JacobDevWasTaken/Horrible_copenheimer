@@ -1,6 +1,7 @@
 {
-    "WORKERS": 25,
+    "WORKERS": 50,
     "TIMEOUT": 1,
     "SERVER_INFO": true,
-    "PORTS": [25565]
+    "PORTS": [25565],
+    "DEBUG": false
 }
