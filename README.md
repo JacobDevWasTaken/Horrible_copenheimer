@@ -6,7 +6,7 @@ A minecraft server seeker, but horribly bad.
 
    Install python (if you haven't already) from [python.org](https://python.org).
 
-   Simply donwload the installer for the latest version of python *3*
+   Simply donwload the installer for the latest version of python *3*.
    
    *IMPORTANT: USE PYTHON 3 AND NOT PYTHON 2*
    
