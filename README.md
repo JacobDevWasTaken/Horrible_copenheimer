@@ -18,4 +18,4 @@ Available settings:
  - Timeout: The timeout when trying to connect to ports, in seconds. Deafult is 1.
  - Server Info: Coming soon, currently does nothing.
  - Ports: The ports that the program tries to connect to, as an array. Deafult is only [25565]. Add more ports with commas, [123, 456, 25565, 9999].
- - Debug: Logs every connection. Deafult is false, only enable for debugging purposes.
+ - Debug: Logs every attempted connection. Deafult is false, only enable for debugging purposes.
