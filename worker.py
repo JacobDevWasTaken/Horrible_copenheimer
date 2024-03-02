@@ -18,7 +18,7 @@ def stop_threads():
     running = False
 
 
-def random_ip() -> str:
+def random_ip():
     return f"{random.randint(1, 255)}.{random.randint(1, 255)}.{random.randint(1, 255)}.{random.randint(1, 255)}"
 
 
