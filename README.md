@@ -1,7 +1,7 @@
 # Horrible copenheimer
 A minecraft server seeker, but horribly bad.
 
-I only made this beacuase it was fun and it is not made to be efficient or fast. If you want a good server scanner use serverseeker or smthing.
+I only made this beacuase it was fun and it is not made to be efficient or fast. If you want a good server scanner use serverseeker or something.
 
 Also stop making issues telling me that my code is bad and that i should kill myself. Please.
 
