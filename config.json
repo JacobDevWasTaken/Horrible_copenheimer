@@ -1,7 +1,8 @@
 {
-    "WORKERS": 250,
+    "WORKERS": 20,
+    "BATCH_SIZE": 50,
     "TIMEOUT": 1,
-    "SERVER_INFO": true,
     "PORTS": [25565],
-    "DEBUG": false
+    "DEBUG": false,
+    "USE_WEBHOOK": true
 }
