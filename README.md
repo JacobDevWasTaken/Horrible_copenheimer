@@ -33,6 +33,8 @@ To download the ZIP click "Code (The green button on the top left)" -> "Download
 ## Usage
 Go into the Horrible_copenheimer folder/directory and run `main.py`.
 
+If this gives a bunch of errors on linux/mac, try running `ulimit -n 10000` in the Horrible_copenheimer folder/directory.
+
 Tip: Increase the number of workers or the batch size in the configration file to make it faster.
 
 The found servers will be stored in a file called `found_servers.txt` in the same folder as the other files, and you will see it in the logs:
