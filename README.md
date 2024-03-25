@@ -52,3 +52,6 @@ Available settings:
  - Ports: The ports that the program tries to connect to, as an array. Deafult is only `[25565]`. Add more ports with commas, `[123, 456, 25565, 9999]`.
  - Debug: Logs every attempted connection. Deafult is `false`, only enable for debugging purposes.
  - Use webhook: Sends all found servers to a discord webhook. [discord_webhook](https://github.com/lovvskillz/python-discord-webhook) is required for this. If this is enabled, paste your discord webhook into the webhook.txt file.
+
+## License
+This software is licensed under the GNU General Public License v3.0
