@@ -1,3 +1,7 @@
+# WARNING: HORRIBLE COPENHEIMER IS NO LONGER MAINTAINED
+Use the [new repo](https://github.com/JacobDevWasTaken/Really-bad-copenheimer), please.
+
+
 # Horrible copenheimer
 A minecraft server seeker, but horribly bad.
 
